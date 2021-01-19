@@ -1,0 +1,32 @@
+  <form [formGroup]='formg'>
+    <h1>Crete your poll</h1>
+
+    <mat-form-field class="title" appearance="fill">
+      <mat-label>Enter poll title</mat-label>
+      <input formControlName='title' matInput #input maxlength="300">
+    </mat-form-field>
+
+
+    <div *ngFor="let option of options.controls; index as i" class="option">
+
+      <mat-form-field appearance="fill">
+        <mat-label>Option {{i+1}} </mat-label>
+        <input matInput [formControl]='option'>
+      </mat-form-field>
+
+
+      <button mat-mini-fab (click)='removeoption(i)'>
+        <i class="demo-icon icon-trash"></i>
+      </button>
+    </div>
+
+    <!-- <button (click)='addoption()' mat-raised-button color='primary'>Add</button> -->
+    <button (click)='addoption()' mat-fab color='primary'>
+      <i class="demo-icon icon-plus"></i>
+    </button>
+
+
+    <button mat-raised-button color='primary'>Submit</button>
+
+
+  </form>
