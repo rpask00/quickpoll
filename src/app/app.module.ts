@@ -9,11 +9,13 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { AngularFireModule } from '@angular/fire';
 import { AngularFireDatabaseModule } from '@angular/fire/database';
 import { environment } from 'src/environments/environment';
+import { PoolViewComponent } from './pool-view/pool-view.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     HomeScreenComponent,
+    PoolViewComponent,
   ],
   imports: [
     BrowserModule,

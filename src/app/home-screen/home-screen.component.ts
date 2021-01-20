@@ -1,7 +1,8 @@
-import { Component, OnChanges, OnInit } from '@angular/core';
-import { AngularFireDatabase } from '@angular/fire/database';
+import { Component, OnInit } from '@angular/core';
 import { FormArray, FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
-import { Option, Pool } from '../../interfaces';
+import { Pool } from '../../interfaces';
+import { DatabaseService } from '../services/database.service';
+
 @Component({
   selector: 'app-home-screen',
   templateUrl: './home-screen.component.html',
@@ -10,13 +11,11 @@ import { Option, Pool } from '../../interfaces';
 export class HomeScreenComponent implements OnInit {
 
   formg: FormGroup
-  option_count: number = 4;
   options: FormArray
-
 
   constructor(
     private formBuilder: FormBuilder,
-    private afdb: AngularFireDatabase
+    private databaseSv: DatabaseService,
   ) {
     this.formg = this.formBuilder.group({
       title: ['', Validators.required],
@@ -30,17 +29,10 @@ export class HomeScreenComponent implements OnInit {
     ])
   }
 
-  ngOnInit(): void {
-    console.log(this.formg.valid);
-    this.afdb.object('/name').set({
-      sfasefafe: 'aefaefaef'
-    })
-
-  }
+  ngOnInit(): void { }
 
 
   addoption() {
-    this.option_count++;
     this.options.controls.push(new FormControl('', []))
   }
 
@@ -56,12 +48,15 @@ export class HomeScreenComponent implements OnInit {
     }
 
     this.options.controls.forEach((op, i) => {
-      pool.options.push({
-        name: op.value,
-        votes: 0
-      })
+      if (op.value) {
+        pool.options.push({
+          name: op.value,
+          votes: 0
+        })
+      }
     })
 
+    this.databaseSv.submitPool(pool)
   }
 
 }
