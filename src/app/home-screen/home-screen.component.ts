@@ -1,4 +1,5 @@
 import { Component, OnChanges, OnInit } from '@angular/core';
+import { AngularFireDatabase } from '@angular/fire/database';
 import { FormArray, FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
 import { Option, Pool } from '../../interfaces';
 @Component({
@@ -15,6 +16,7 @@ export class HomeScreenComponent implements OnInit {
 
   constructor(
     private formBuilder: FormBuilder,
+    private afdb: AngularFireDatabase
   ) {
     this.formg = this.formBuilder.group({
       title: ['', Validators.required],
@@ -30,6 +32,9 @@ export class HomeScreenComponent implements OnInit {
 
   ngOnInit(): void {
     console.log(this.formg.valid);
+    this.afdb.object('/name').set({
+      sfasefafe: 'aefaefaef'
+    })
 
   }
 
