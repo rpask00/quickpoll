@@ -10,7 +10,7 @@
     <div *ngFor="let option of options.controls; index as i" class="option">
 
       <mat-form-field appearance="fill">
-        <mat-label>Option {{i+1}} </mat-label>
+        <mat-label>Option# {{i+1}} </mat-label>
         <input matInput [formControl]='option'>
       </mat-form-field>
 
@@ -20,13 +20,13 @@
       </button>
     </div>
 
-    <!-- <button (click)='addoption()' mat-raised-button color='primary'>Add</button> -->
-    <button (click)='addoption()' mat-fab color='primary'>
-      <i class="demo-icon icon-plus"></i>
-    </button>
+    <div class="btns">
+
+      <button (click)='addoption()' mat-fab color='primary'>
+        <i class="demo-icon icon-plus"></i>
+      </button>
+      <button [disabled]='!formg.valid'  mat-raised-button color='primary' class='submit' (click)='submit()'>Submit</button>
 
 
-    <button mat-raised-button color='primary'>Submit</button>
-
-
+    </div>
   </form>

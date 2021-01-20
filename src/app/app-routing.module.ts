@@ -5,9 +5,9 @@ import { HomeScreenComponent } from './home-screen/home-screen.component';
 
 const routes: Routes = [
   {
-    path:"",
-    pathMatch:'full',
-    component:HomeScreenComponent
+    path: "",
+    pathMatch: 'full',
+    component: HomeScreenComponent
   }
 ];
 

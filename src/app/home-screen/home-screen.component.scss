@@ -3,19 +3,11 @@ form {
         color: white;
     }
 
-    width: 50vw;
-    padding: 20px;
-    border-radius: 3px;
     background-color: #025159;
-
-    position: absolute;
-
-    top: 10vw;
-    left: 50%;
-    transform: translateX(-50%);
-
-
-
+    padding: 20px;
+    width: 50vw;
+    border-radius: 3px;
+    margin :100px auto 100px auto;
 
     mat-form-field {
         width: 100%;
@@ -32,9 +24,19 @@ form {
         }
 
     }
+
+    .submit {
+        margin: 20px 100px 10px 100px;
+    }
+
+    .btns {
+        display: flex;
+        flex-direction: column;
+    }
 }
 
 mat-label {
+    font-size: 19px;
     color: white;
 }
 
