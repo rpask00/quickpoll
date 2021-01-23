@@ -1,4 +1,4 @@
-  <form [formGroup]='formg'>
+  <form [formGroup]='formg' class='component-content'>
     <h1>Crete your poll</h1>
 
     <mat-form-field class="title" appearance="fill">
@@ -10,7 +10,7 @@
     <div *ngFor="let option of options.controls; index as i" class="option">
 
       <mat-form-field appearance="fill">
-        <mat-label>Option# {{i+1}} </mat-label>
+        <mat-label class="label-option">Option# {{i+1}} </mat-label>
         <input matInput [formControl]='option'>
       </mat-form-field>
 
@@ -22,11 +22,14 @@
 
     <div class="btns">
 
-      <button (click)='addoption()' mat-fab color='primary'>
+      <button (click)='addoption()' mat-fab class='addbtn'  color='primary'>
         <i class="demo-icon icon-plus"></i>
       </button>
-      <button [disabled]='!formg.valid'  mat-raised-button color='primary' class='submit' (click)='submit()'>Submit</button>
-
-
+      <mat-checkbox 
+      color='primary'
+      formControlName="multiple">
+      Multiple choices
+      </mat-checkbox>
     </div>
+    <button [disabled]='!formg.valid'  mat-raised-button color='primary' class='submit' (click)='submit()'>Submit</button>
   </form>

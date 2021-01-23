@@ -1,0 +1,43 @@
+.component-content {
+    background-color: #0250598c;
+    width: 60vw;
+    height: 40vh;
+    padding: 20px;
+    border-radius: 5px;
+    color: white;
+    text-align: center;
+
+    h1 {
+        text-align: center;
+    }
+
+    ul {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-evenly;
+        height: 70%;
+        width: 90%;
+    }
+
+    li {
+        list-style-type: none;
+        font-size: 20px;
+        background-color: #025059c9;
+        padding: 15px;
+        text-align: left;
+        cursor: pointer;
+
+        span {
+            display: block;
+        }
+
+        input {
+            background-color: transparent;
+            border: 4px solid white;
+            width: 15px;
+            height: 15px;
+            outline: none;
+        }
+
+    }
+}

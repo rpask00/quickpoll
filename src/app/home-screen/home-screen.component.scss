@@ -1,13 +1,12 @@
-form {
+.component-content {
     h1 {
         color: white;
     }
 
-    background-color: #025159;
+    text-align: center;
+    background-color: #025059cb;
     padding: 20px;
     width: 50vw;
-    border-radius: 3px;
-    margin :100px auto 100px auto;
 
     mat-form-field {
         width: 100%;
@@ -26,18 +25,27 @@ form {
     }
 
     .submit {
-        margin: 20px 100px 10px 100px;
+        width: 50%;
     }
 
     .btns {
+        .addbtn {
+            margin-right: 20px;
+        }
+
+        color:rgba(255, 255, 255, 0.624);
         display: flex;
-        flex-direction: column;
+        align-items: center;
     }
 }
 
 mat-label {
     font-size: 19px;
     color: white;
+}
+
+.label-option {
+    color: rgba(255, 255, 255, 0.549);
 }
 
 ::ng-deep .mat-focused .mat-form-field-label {

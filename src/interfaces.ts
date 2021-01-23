@@ -1,10 +1,8 @@
 export interface Pool {
     title: string,
-    options: Option[]
+    votes: number[],
+    labels: string[],
+    multipleSelection: boolean
 }
 
-export interface Option {
-    name: string,
-    votes: number
-}
 

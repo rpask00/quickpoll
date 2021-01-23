@@ -1,1 +1,23 @@
-<canvas id="goodCanvas1" width="400" height="100" aria-label="Hello ARIA World" role="img"></canvas>
+<div
+  class="component-content"
+  *ngIf="pool$ | async as pool else notfound"
+>
+  <h1>{{pool.title}}</h1>
+  <canvas
+    baseChart
+    [datasets]="barChartData"
+    [labels]="barChartLabels"
+    [options]="barChartOptions"
+    [legend]="barChartLegend"
+    [chartType]="barChartType"
+  >
+  </canvas>
+</div>
+
+<ng-template #notfound>
+  <div class="component-content notfound">
+    <h1>Pool not found</h1>
+
+
+  </div>
+</ng-template>

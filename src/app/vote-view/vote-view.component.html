@@ -1,0 +1,26 @@
+<div
+  class="component-content"
+  *ngIf="pool$ | async as pool"
+>
+
+  <h1>{{pool.title}}</h1>
+  <ul>
+    <li
+      *ngFor='let label of pool.labels'
+      (click)='optionClick($event)'
+    >
+      <input
+        type="checkbox"
+        #check
+      >
+      {{label}}
+    </li>
+  </ul>
+
+  <button
+    mat-raised-button
+    color="accent"
+    (click)='updateVotes()'
+  >Submit</button>
+
+</div>

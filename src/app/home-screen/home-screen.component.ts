@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormArray, FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
+import { Router } from '@angular/router';
 import { Pool } from '../../interfaces';
 import { DatabaseService } from '../services/database.service';
 
@@ -16,9 +17,11 @@ export class HomeScreenComponent implements OnInit {
   constructor(
     private formBuilder: FormBuilder,
     private databaseSv: DatabaseService,
+    private router: Router
   ) {
     this.formg = this.formBuilder.group({
       title: ['', Validators.required],
+      multiple: [false, Validators.required],
     })
 
     this.options = new FormArray([
@@ -42,21 +45,23 @@ export class HomeScreenComponent implements OnInit {
   }
 
   submit() {
+    console.log(this.formg.controls.multiple.value);
     let pool: Pool = {
       title: this.formg.controls.title.value,
-      options: []
+      labels: [],
+      votes: [],
+      multipleSelection: this.formg.controls.multiple.value
     }
 
     this.options.controls.forEach((op, i) => {
       if (op.value) {
-        pool.options.push({
-          name: op.value,
-          votes: 0
-        })
+        pool.labels.push(op.value)
+        pool.votes.push(0)
       }
     })
 
-    this.databaseSv.submitPool(pool)
+    let id = this.databaseSv.submitPool(pool)
+    this.router.navigateByUrl('/v/' + id)
   }
 
 }
