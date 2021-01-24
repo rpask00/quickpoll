@@ -1,4 +1,4 @@
-# Quickpool
+# Real time pool service hosted od firebase.
 
 
 ![](https://i.imgur.com/DovDUQ4.png)
