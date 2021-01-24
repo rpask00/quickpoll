@@ -1,23 +1,15 @@
+
 <div
+  [style.display]="poolTitle ? 'block' :'none' "
   class="component-content"
-  *ngIf="pool$ | async as pool else notfound"
 >
-  <h1>{{pool.title}}</h1>
-  <canvas
-    baseChart
-    [datasets]="barChartData"
-    [labels]="barChartLabels"
-    [options]="barChartOptions"
-    [legend]="barChartLegend"
-    [chartType]="barChartType"
-  >
-  </canvas>
+  <h1>{{poolTitle}}</h1>
+  <canvas #ctx></canvas>
 </div>
 
-<ng-template #notfound>
-  <div class="component-content notfound">
-    <h1>Pool not found</h1>
-
-
-  </div>
-</ng-template>
+<div
+  [style.display]="poolTitle ? 'none' :'block' "
+  class="component-content notfound"
+>
+  <h1>Pool not found</h1>
+</div>

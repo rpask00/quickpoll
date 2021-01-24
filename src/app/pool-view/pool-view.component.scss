@@ -9,6 +9,14 @@
     }
 }
 
-.notfound{
 
+@media (max-width: 800px) {
+
+    .component-content {
+        width: 95vw;
+
+        h1 {
+            font-size: 20px;
+        }
+    }
 }

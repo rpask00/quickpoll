@@ -45,7 +45,6 @@ export class HomeScreenComponent implements OnInit {
   }
 
   submit() {
-    console.log(this.formg.controls.multiple.value);
     let pool: Pool = {
       title: this.formg.controls.title.value,
       labels: [],
@@ -61,7 +60,8 @@ export class HomeScreenComponent implements OnInit {
     })
 
     let id = this.databaseSv.submitPool(pool)
-    this.router.navigateByUrl('/v/' + id)
+    setTimeout(() => this.router.navigateByUrl('/v/' + id), 1000)
+
   }
 
 }

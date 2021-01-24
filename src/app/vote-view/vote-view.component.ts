@@ -52,10 +52,10 @@ export class VoteViewComponent implements OnInit {
       }
     })
 
-    localStorage.setItem(this.poolId, 'true');
+    localStorage.setItem(this.poolId, 'true')
     this.databaseSv.updateVotes(this.poolId, votes)
-    this.router.navigateByUrl('/r/' + this.poolId)
-
+      .then(() => this.router.navigateByUrl('/r/' + this.poolId))
+      .catch(console.log)
   }
 
 }

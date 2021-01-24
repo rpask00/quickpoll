@@ -24,11 +24,10 @@ export class DatabaseService {
     return this.afdb.object('pools/' + id).valueChanges()
   }
 
-
-  updateVotes(id: string, votesindexes: number[]): void {
-    this.afdb.object('pools/' + id + '/votes').valueChanges().pipe(take(1)).subscribe(votes => {
+  async updateVotes(id: string, votesindexes: number[]): Promise<any> {
+    await this.afdb.object('pools/' + id + '/votes').valueChanges().pipe(take(1)).subscribe(async (votes) => {
       votesindexes.forEach(vi => votes[vi]++)
-      this.afdb.object('pools/' + id + '/votes').set(votes)
+      await this.afdb.object('pools/' + id + '/votes').set(votes)
     })
   }
 

@@ -39,6 +39,13 @@
     }
 }
 
+
+
+
+
+
+
+
 mat-label {
     font-size: 19px;
     color: white;
@@ -61,4 +68,12 @@ mat-label {
 ::ng-deep.mat-form-field-ripple {
     /*change color of underline when focused*/
     background-color: #F2C572 !important;
+}
+
+@media (max-width: 800px) {
+    .component-content {
+        width: 80vw;
+        margin: 30px auto 0 auto;
+    }
+
 }
