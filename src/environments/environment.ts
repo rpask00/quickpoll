@@ -5,13 +5,7 @@
 export const environment = {
   production: false,
   firebaseConfig: {
-    apiKey: "AIzaSyANGm-iteAra6m4GfZbyMOvIB3ikXIWfD8",
-    authDomain: "quickpoll-1ad71.firebaseapp.com",
-    databaseURL: "https://quickpoll-1ad71-default-rtdb.europe-west1.firebasedatabase.app",
-    projectId: "quickpoll-1ad71",
-    storageBucket: "quickpoll-1ad71.appspot.com",
-    messagingSenderId: "333992292795",
-    appId: "1:333992292795:web:9d0ef093405510ecd0d49e"
+
   }
 };
 
