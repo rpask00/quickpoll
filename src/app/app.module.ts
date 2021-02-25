@@ -1,5 +1,5 @@
 import { BrowserModule } from '@angular/platform-browser';
-import { NgModule } from '@angular/core';
+import { NgModule, enableProdMode } from '@angular/core';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { HomeScreenComponent } from './home-screen/home-screen.component';
@@ -13,6 +13,8 @@ import { PoolViewComponent } from './pool-view/pool-view.component';
 import { ChartsModule } from 'ng2-charts';
 import { RouterModule } from '@angular/router';
 import { VoteViewComponent } from './vote-view/vote-view.component';
+
+enableProdMode()
 
 @NgModule({
   declarations: [
