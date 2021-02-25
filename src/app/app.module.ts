@@ -13,6 +13,7 @@ import { PoolViewComponent } from './pool-view/pool-view.component';
 import { ChartsModule } from 'ng2-charts';
 import { RouterModule } from '@angular/router';
 import { VoteViewComponent } from './vote-view/vote-view.component';
+import { ToastrModule } from 'ngx-toastr';
 
 enableProdMode()
 
@@ -33,7 +34,8 @@ enableProdMode()
     FormsModule,
     ReactiveFormsModule,
     ChartsModule,
-    RouterModule
+    RouterModule,
+    ToastrModule.forRoot(),
   ],
   providers: [],
   bootstrap: [AppComponent]

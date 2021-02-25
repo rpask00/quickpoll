@@ -23,4 +23,19 @@
     (click)='updateVotes()'
   >Submit</button>
 
+  <div class="link">
+    <input
+      #linkEl
+      type="link"
+      [value]='link'
+    >
+
+    <button
+      mat-raised-button
+      color="accent"
+      (click)='copyLInk()'
+    >copy</button>
+  </div>
+
+
 </div>
